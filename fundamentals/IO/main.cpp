@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 int main()
 {
     std::cout << "--------Basic output------"
@@ -12,5 +13,12 @@ int main()
     std::cin >> age;
     std::cout << "User's age: "
               << age
+              << "\n";
+    std::string Name;
+    std::cout << "enter your age: ";
+    std::cin.ignore();
+    std::getline(std::cin,Name);
+    std::cout << "User's Name: "
+              << Name
               << "\n";
 }

@@ -10,12 +10,16 @@ private:
     std::size_t size;
     std::size_t capacity;
 
+    void Grow();
+    void Shrink();
+
 public:
     DynamicArray();
+    ~DynamicArray();
 
     void PushBack(int element);
-    void Print();
     void PopBack();
+    void Print();
 };
 
 #endif
