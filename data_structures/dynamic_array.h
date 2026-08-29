@@ -2,11 +2,10 @@
 #define DYNAMICARRAY_H
 
 #include <cstddef>
-
 class DynamicArray
 {
 private:
-    int* data;
+    int *data;
     std::size_t size;
     std::size_t capacity;
 
@@ -17,9 +16,11 @@ public:
     DynamicArray();
     ~DynamicArray();
 
+    DynamicArray(const DynamicArray &other);
+    DynamicArray &operator=(const DynamicArray &other);
+
     void PushBack(int element);
     void PopBack();
     void Print();
 };
-
 #endif

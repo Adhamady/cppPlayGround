@@ -1,6 +1,5 @@
 #include "dynamic_array.h"
 #include <iostream>
-
 DynamicArray::DynamicArray()
 {
     data = nullptr;
@@ -11,6 +10,35 @@ DynamicArray::DynamicArray()
 DynamicArray::~DynamicArray()
 {
     delete[] data;
+}
+
+DynamicArray::DynamicArray(const DynamicArray &other)
+{
+    size = other.size;
+    capacity = other.capacity;
+
+    data = new int[capacity];
+
+    for (std::size_t i = 0; i < size; ++i)
+        data[i] = other.data[i];
+}
+
+DynamicArray &DynamicArray::operator=(const DynamicArray &other)
+{
+    if (this == &other)
+        return *this;
+
+    delete[] data;
+
+    size = other.size;
+    capacity = other.capacity;
+
+    data = new int[capacity];
+
+    for (std::size_t i = 0; i < size; ++i)
+        data[i] = other.data[i];
+
+    return *this;
 }
 
 void DynamicArray::Grow()
